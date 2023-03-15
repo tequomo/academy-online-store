@@ -11,7 +11,7 @@ function Results(): JSX.Element {
               <legend>Показать сначала:</legend>
               <ul className="sorting__order-list">
                 <li className="sorting__order-tab">
-                  <input className="visually-hidden" type="radio" name="sorting-order" value="popular" id="sort-popular" checked></input>
+                  <input className="visually-hidden" type="radio" name="sorting-order" value="popular" id="sort-popular" defaultChecked></input>
                   <label htmlFor="sort-popular">Популярные</label>
                 </li>
                 <li className="sorting__order-tab">
