@@ -3,20 +3,20 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import App from './components/app/app';
-import { createAPI } from './services/api';
-import { productsData } from './store/reducers/products-data/products-data';
+// import { createAPI } from './services/api';
+import { rootReducer } from './store/reducers/products-data/root-reducer';
 
 
-const api = createAPI();
+// const api = createAPI();
 
 const store = configureStore({
-  reducer: productsData,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      thunk: {
-        extraArgument: api,
-      },
-    }),
+  reducer: rootReducer,
+  // middleware: (getDefaultMiddleware) =>
+  //   getDefaultMiddleware({
+  //     thunk: {
+  //       extraArgument: api,
+  //     },
+  //   }),
 });
 
 

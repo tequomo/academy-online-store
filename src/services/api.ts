@@ -1,6 +1,6 @@
 import axios, {AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 
-const BACKEND_URL = 'https://mock.pages.academy/store/db';
+const BACKEND_URL = 'https://mock.pages.academy/store';
 const REQUEST_TIMEOUT = 5000;
 
 
