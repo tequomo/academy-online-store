@@ -1,4 +1,4 @@
-import { RootState } from "../store/reducers/products-data/root-reducer";
+import { RootState } from "../store/reducers/root-reducer";
 import { ProductType } from "./product-type";
 
 export type ProductsData = {

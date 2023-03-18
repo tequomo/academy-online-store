@@ -1,21 +1,21 @@
 import ResultsList from "./results-list/results-list";
 import Sorting from "../sorting/sorting";
-// import { useDispatch } from "react-redux";
-// import { useCallback, useEffect } from "react";
-// import { fetchProductsAction } from "../../services/api-actions";
+import { useDispatch } from "react-redux";
+import { useCallback, useEffect } from "react";
+import { fetchProductsAction } from "../../services/api-actions";
+import { ThunkAppDispatch } from "../../types/action";
 
 function Results(): JSX.Element {
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch<ThunkAppDispatch>();
 
-  // const fetchProducts = useCallback(() => {
-  //   dispatch(fetchProductsAction());
-  // }, [dispatch]);
+  const fetchProducts = useCallback(() => {
+    dispatch(fetchProductsAction());
+  }, [dispatch]);
 
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, [fetchProducts]);
-
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
 
   return (
     <section className="onlineshop-app__results results">

@@ -1,5 +1,5 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import { productsData } from "./products-data";
+import { productsData } from "./products-data/products-data";
 
 export enum NameSpace {
   products = 'PRODUCTS_DATA',
