@@ -22,4 +22,8 @@ export type ProductType = {
   category: string,
   photos: string[],
   filters: FilterCamera | FilterCar | FilterEstate | FilterLaptop,
+};
+
+export type BackendProductsType = {
+  products: ProductType[],
 }
