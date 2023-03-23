@@ -24,6 +24,6 @@ export type ProductType = {
   filters: FilterCamera | FilterCar | FilterEstate | FilterLaptop,
 };
 
-export type BackendProductsType = {
+export type BackendResultsType = {
   products: ProductType[],
 }

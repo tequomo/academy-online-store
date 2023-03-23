@@ -1,12 +1,12 @@
 import { loadProducts } from "../store/actions";
 import { ThunkActionResult } from "../types/action";
-import { ProductType } from "../types/product-type";
+import { BackendResultsType } from "../types/product-type";
 
 export const fetchProductsAction = (): ThunkActionResult =>
   async (dispatch, _getState, api): Promise<void> => {
     try {
-      const { data } = await api.get<ProductType[]>("/db");
-      dispatch(loadProducts(data));
+      const { data } = await api.get<BackendResultsType>("/db");
+      dispatch(loadProducts(data.products));
     } catch {
       console.error('error');
     }

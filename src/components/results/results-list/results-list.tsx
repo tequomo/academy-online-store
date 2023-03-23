@@ -1,16 +1,21 @@
 import { useSelector } from "react-redux";
 import { getProducts } from "../../../store/reducers/products-data/selectors";
+import { ProductType } from "../../../types/product-type";
+import ResultsItem from "../results-item/results-item";
 
 function ResultsList(): JSX.Element {
 
   const products = useSelector(getProducts);
-  console.log(products);
+  // console.log(products);
 
   return (
     <ul className="results__list">
 
+      {
+        products.map((product: ProductType) => <ResultsItem key={product.price} product={product}/>)
+      }
 
-      <li className="results__item product">
+      {/* <li className="results__item product">
         <button className="product__favourite fav-add" type="button" aria-label="Добавить в избранное">
           <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fillRule={"evenodd"} clipRule={"evenodd"} d="M3 7C3 13 10 16.5 11 17C12 16.5 19 13 19 7C19 4.79086 17.2091 3 15 3C12 3 11 5 11 5C11 5 10 3 7 3C4.79086 3 3 4.79086 3 7Z" stroke="white" strokeWidth={"2"} strokeLinejoin={"round"} />
@@ -165,7 +170,7 @@ function ResultsList(): JSX.Element {
           <div className="product__address">Омск, улица Уездная</div>
           <div className="product__date">30 декабря 2019 года</div>
         </div>
-      </li>
+      </li> */}
     </ul>
   );
 };

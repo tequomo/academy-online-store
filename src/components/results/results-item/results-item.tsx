@@ -1,4 +1,14 @@
-function ResultsItem(): JSX.Element {
+import { ProductType } from "../../../types/product-type";
+import { formatPrice } from "../../../utils";
+
+type ResultsItemPropsType = {
+  product: ProductType,
+};
+
+function ResultsItem({ product }: ResultsItemPropsType): JSX.Element {
+
+  const {name, price, address:{city, street}} = product;
+
   return (
     <li className="results__item product">
       <button className="product__favourite fav-add" type="button" aria-label="Добавить в избранное">
@@ -19,10 +29,10 @@ function ResultsItem(): JSX.Element {
       </div>
       <div className="product__content">
         <h3 className="product__title">
-          <a href="/#">Загородный дом с видом на озеро</a>
+          <a href="/#">{name}</a>
         </h3>
-        <div className="product__price">3 000 000 ₽</div>
-        <div className="product__address">Приозёрск, улица Прибрежная</div>
+        <div className="product__price">{formatPrice(price)}</div>
+        <div className="product__address">{city}, {street}</div>
         <div className="product__date">2 часа назад</div>
       </div>
     </li>
