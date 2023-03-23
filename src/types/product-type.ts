@@ -18,7 +18,7 @@ export type ProductType = {
   seller: SellerType,
   description: string,
   address: AddressType,
-  publish_date: string,
+  publish_date?: string,
   category: string,
   photos: string[],
   filters: FilterCamera | FilterCar | FilterEstate | FilterLaptop,
@@ -27,3 +27,16 @@ export type ProductType = {
 export type BackendResultsType = {
   products: ProductType[],
 }
+
+export type adaptedProductType = {
+  name: string,
+  price: number,
+  coordinates: [number, number],
+  seller: SellerType,
+  description: string,
+  address: AddressType,
+  publishDate: string,
+  category: string,
+  photos: string[],
+  filters: FilterCamera | FilterCar | FilterEstate | FilterLaptop,
+};

@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { adaptProductsToClient } from "../../../adapters";
 import { getProducts } from "../../../store/reducers/products-data/selectors";
 import { ProductType } from "../../../types/product-type";
 import ResultsItem from "../results-item/results-item";
@@ -6,7 +7,7 @@ import ResultsItem from "../results-item/results-item";
 function ResultsList(): JSX.Element {
 
   const products = useSelector(getProducts);
-  // console.log(products);
+  console.log(typeof adaptProductsToClient(products));
 
   return (
     <ul className="results__list">
