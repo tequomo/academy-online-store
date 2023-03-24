@@ -1,19 +1,17 @@
 import { useSelector } from "react-redux";
-import { adaptProductsToClient } from "../../../adapters";
 import { getProducts } from "../../../store/reducers/products-data/selectors";
-import { ProductType } from "../../../types/product-type";
+import { AdaptedProductType } from "../../../types/product-type";
 import ResultsItem from "../results-item/results-item";
 
 function ResultsList(): JSX.Element {
 
   const products = useSelector(getProducts);
-  console.log(typeof adaptProductsToClient(products));
 
   return (
     <ul className="results__list">
 
       {
-        products.map((product: ProductType) => <ResultsItem key={product.price} product={product}/>)
+        products.map((product: AdaptedProductType) => <ResultsItem key={product.price} product={product}/>)
       }
 
       {/* <li className="results__item product">
