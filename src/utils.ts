@@ -7,3 +7,15 @@ export const formatDate = (date: string | undefined): string => {
   const dif = new Date(diff);
   return dif.toLocaleString('ru-RU', {year: 'numeric', month: 'long', day: 'numeric'})
 }
+
+export const exportDate = (date: string) => {
+  const currentDate = new Date().getTime();
+  switch (date) {
+    case value:
+
+      break;
+
+    default:
+      break;
+  }
+}
