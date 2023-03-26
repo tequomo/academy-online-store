@@ -1,5 +1,5 @@
 import { AdaptedProductType } from "../../../types/product-type";
-import { formatPrice } from "../../../utils";
+import { formatDate, formatPrice } from "../../../utils";
 
 type ResultsItemPropsType = {
   product: AdaptedProductType,
@@ -33,7 +33,7 @@ function ResultsItem({ product }: ResultsItemPropsType): JSX.Element {
         </h3>
         <div className="product__price">{formatPrice(price)}</div>
         <div className="product__address">{city}, {street}</div>
-        <div className="product__date">{publishDate} 2 часа назад</div>
+        <div className="product__date">{formatDate(publishDate)} 2 часа назад</div>
       </div>
     </li>
   );
